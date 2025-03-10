@@ -1,0 +1,24 @@
+package com.irsan.jobrunr.config;
+
+import org.jobrunr.configuration.JobRunr;
+import org.jobrunr.scheduling.JobScheduler;
+import org.jobrunr.storage.sql.common.SqlStorageProviderFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import javax.sql.DataSource;
+
+@Configuration
+public class JobRunrConfig {
+
+    @Bean
+    public JobScheduler jobScheduler(DataSource dataSource) {
+        return JobRunr.configure()
+                .useStorageProvider(SqlStorageProviderFactory.using(dataSource))
+                .useDashboard()
+                .initialize()
+                .getJobScheduler();
+
+    }
+
+}

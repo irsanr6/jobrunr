@@ -1,0 +1,133 @@
+2025-03-17 16:34:00.477 INFO  [main] c.irsan.jobrunr.JobrunrApplication - Starting JobrunrApplication using Java 17.0.12 with PID 18211 (/Users/MacBook/my-project/java/jobrunr/target/classes started by MacBook in /Users/MacBook/my-project/java/jobrunr)
+2025-03-17 16:34:00.481 INFO  [main] c.irsan.jobrunr.JobrunrApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-17 16:34:01.037 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-17 16:34:01.039 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-17 16:34:01.039 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-17 16:34:01.071 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-17 16:34:01.218 INFO  [main] com.zaxxer.hikari.HikariDataSource - jobrunr - Starting...
+2025-03-17 16:34:02.256 WARN  [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobController' defined in file [/Users/MacBook/my-project/java/jobrunr/target/classes/com/irsan/jobrunr/controller/JobController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobScheduler' defined in class path resource [com/irsan/jobrunr/config/JobRunrConfig.class]: Unsatisfied dependency expressed through method 'jobScheduler' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/irsan/jobrunr/config/DataSourceConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: Failed to initialize pool: Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025-03-17 16:34:02.261 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-03-17 16:34:02.300 ERROR [main] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobController' defined in file [/Users/MacBook/my-project/java/jobrunr/target/classes/com/irsan/jobrunr/controller/JobController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobScheduler' defined in class path resource [com/irsan/jobrunr/config/JobRunrConfig.class]: Unsatisfied dependency expressed through method 'jobScheduler' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/irsan/jobrunr/config/DataSourceConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: Failed to initialize pool: Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.irsan.jobrunr.JobrunrApplication.main(JobrunrApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobScheduler' defined in class path resource [com/irsan/jobrunr/config/JobRunrConfig.class]: Unsatisfied dependency expressed through method 'jobScheduler' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/irsan/jobrunr/config/DataSourceConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: Failed to initialize pool: Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1606)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/irsan/jobrunr/config/DataSourceConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: Failed to initialize pool: Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1606)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 34 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: Failed to initialize pool: Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 47 common frames omitted
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:584)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+	at com.irsan.jobrunr.config.DataSourceConfig.dataSource(DataSourceConfig.java:62)
+	at com.irsan.jobrunr.config.DataSourceConfig$$SpringCGLIB$$0.CGLIB$dataSource$0(<generated>)
+	at com.irsan.jobrunr.config.DataSourceConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:372)
+	at com.irsan.jobrunr.config.DataSourceConfig$$SpringCGLIB$$0.dataSource(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 50 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	... 63 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 72 common frames omitted
+2025-03-17 16:34:32.666 INFO  [main] c.irsan.jobrunr.JobrunrApplication - Starting JobrunrApplication using Java 17.0.12 with PID 18248 (/Users/MacBook/my-project/java/jobrunr/target/classes started by MacBook in /Users/MacBook/my-project/java/jobrunr)
+2025-03-17 16:34:32.668 INFO  [main] c.irsan.jobrunr.JobrunrApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-17 16:34:33.160 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-17 16:34:33.161 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-17 16:34:33.161 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-17 16:34:33.179 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-17 16:34:33.244 INFO  [main] com.zaxxer.hikari.HikariDataSource - jobrunr - Starting...
+2025-03-17 16:34:33.342 INFO  [main] com.zaxxer.hikari.pool.HikariPool - jobrunr - Added connection org.postgresql.jdbc.PgConnection@37e0056e
+2025-03-17 16:34:33.344 INFO  [main] com.zaxxer.hikari.HikariDataSource - jobrunr - Start completed.
+2025-03-17 16:34:33.431 INFO  [main] o.j.s.t.ScheduledThreadPoolJobRunrExecutor - ThreadManager of type 'ScheduledThreadPool' started
+2025-03-17 16:34:33.441 INFO  [main] o.j.d.JobRunrDashboardWebServer - JobRunr Dashboard using PostgresStorageProvider started at http://localhost:9000/dashboard
+2025-03-17 16:34:33.443 INFO  [backgroundjob-zookeeper-pool-2-thread-1] o.jobrunr.server.BackgroundJobServer - JobRunr BackgroundJobServer (25b27172-dc3d-4a9b-99f2-bbecef92481d) using PostgresStorageProvider and 1 BackgroundJobPerformers started successfully
+2025-03-17 16:34:33.444 INFO  [backgroundjob-zookeeper-pool-2-thread-1] org.jobrunr.server.ServerZooKeeper - Server 25b27172-dc3d-4a9b-99f2-bbecef92481d is master (this BackgroundJobServer)
+2025-03-17 16:34:33.683 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-17 16:34:33.699 INFO  [main] c.irsan.jobrunr.JobrunrApplication - Started JobrunrApplication in 1.268 seconds (process running for 1.528)
+2025-03-17 16:34:33.978 INFO  [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-17 16:35:49.429 INFO  [extShutdownHook] o.jobrunr.server.BackgroundJobServer - BackgroundJobServer and BackgroundJobPerformers - stopping (waiting for all jobs to complete - max 10 seconds)
+2025-03-17 16:35:49.436 INFO  [extShutdownHook] o.jobrunr.server.BackgroundJobServer - BackgroundJobServer and BackgroundJobPerformers stopped
+2025-03-17 16:35:49.438 INFO  [extShutdownHook] o.j.d.JobRunrDashboardWebServer - JobRunr dashboard stopped
+2025-03-17 16:35:49.445 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - jobrunr - Shutdown initiated...
+2025-03-17 16:35:49.446 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - jobrunr - Shutdown completed.

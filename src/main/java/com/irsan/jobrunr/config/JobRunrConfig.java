@@ -15,7 +15,8 @@ public class JobRunrConfig {
     public JobScheduler jobScheduler(DataSource dataSource) {
         return JobRunr.configure()
                 .useStorageProvider(SqlStorageProviderFactory.using(dataSource))
-                .useDashboard()
+                .useBackgroundJobServer(1)
+                .useDashboard(8001)
                 .initialize()
                 .getJobScheduler();
 

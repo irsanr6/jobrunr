@@ -131,3 +131,60 @@ Caused by: java.net.ConnectException: Connection refused
 2025-03-17 16:35:49.438 INFO  [extShutdownHook] o.j.d.JobRunrDashboardWebServer - JobRunr dashboard stopped
 2025-03-17 16:35:49.445 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - jobrunr - Shutdown initiated...
 2025-03-17 16:35:49.446 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - jobrunr - Shutdown completed.
+2025-04-19 03:20:14.328 INFO  [main] c.i.jobrunr.JobrunrApplicationTests - Starting JobrunrApplicationTests using Java 17.0.12 with PID 66304 (started by MacBook in /Users/MacBook/my-project/java/jobrunr)
+2025-04-19 03:20:14.329 INFO  [main] c.i.jobrunr.JobrunrApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-04-19 03:20:14.828 INFO  [main] com.zaxxer.hikari.HikariDataSource - jobrunr - Starting...
+2025-04-19 03:20:15.123 INFO  [main] com.zaxxer.hikari.pool.HikariPool - jobrunr - Added connection org.postgresql.jdbc.PgConnection@78910096
+2025-04-19 03:20:15.124 INFO  [main] com.zaxxer.hikari.HikariDataSource - jobrunr - Start completed.
+2025-04-19 03:20:15.384 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v000__create_migrations_table.sql}
+2025-04-19 03:20:15.507 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v001__create_job_table.sql}
+2025-04-19 03:20:15.736 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v002__create_recurring_job_table.sql}
+2025-04-19 03:20:15.843 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v003__create_background_job_server_table.sql}
+2025-04-19 03:20:15.997 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v004__create_job_stats_view.sql}
+2025-04-19 03:20:16.264 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v005__update_job_stats_view.sql}
+2025-04-19 03:20:16.410 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v006__alter_table_jobs_add_recurringjob.sql}
+2025-04-19 03:20:16.551 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v007__alter_table_backgroundjobserver_add_delete_config.sql}
+2025-04-19 03:20:16.682 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v008__alter_table_jobs_increase_jobAsJson_size.sql}
+2025-04-19 03:20:16.766 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v009__change_jobrunr_job_counters_to_jobrunr_metadata.sql}
+2025-04-19 03:20:16.979 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v010__change_job_stats.sql}
+2025-04-19 03:20:17.123 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v011__change_sqlserver_text_to_varchar.sql}
+2025-04-19 03:20:17.215 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v012__change_oracle_alter_jobrunr_metadata_column_size.sql}
+2025-04-19 03:20:17.307 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v013__alter_table_recurring_job_add_createdAt.sql}
+2025-04-19 03:20:17.440 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/postgres/migrations/v014__improve_job_stats.sql}
+2025-04-19 03:20:17.617 INFO  [main] o.j.s.sql.common.DatabaseCreator - Running migration MigrationByPath{path=/org/jobrunr/storage/sql/common/migrations/v015__alter_table_backgroundjobserver_add_name.sql}
+2025-04-19 03:20:17.760 INFO  [main] o.j.s.t.ScheduledThreadPoolJobRunrExecutor - ThreadManager of type 'ScheduledThreadPool' started
+2025-04-19 03:20:17.774 INFO  [main] o.j.d.JobRunrDashboardWebServer - JobRunr Dashboard using PostgresStorageProvider started at http://localhost:8001/dashboard
+2025-04-19 03:20:17.836 INFO  [backgroundjob-zookeeper-pool-3-thread-1] o.jobrunr.server.BackgroundJobServer - JobRunr BackgroundJobServer (ff29ac61-a8d1-46dd-9253-cbaf31166ccb) using PostgresStorageProvider and 1 BackgroundJobPerformers started successfully
+2025-04-19 03:20:17.837 INFO  [backgroundjob-zookeeper-pool-3-thread-1] org.jobrunr.server.ServerZooKeeper - Server ff29ac61-a8d1-46dd-9253-cbaf31166ccb is master (this BackgroundJobServer)
+2025-04-19 03:20:17.988 INFO  [backgroundjob-worker-pool-4-thread-1] o.j.s.tasks.MigrateFromV5toV6Task - Start migration of scheduled jobs from v5 to v6
+2025-04-19 03:20:18.011 INFO  [backgroundjob-worker-pool-4-thread-1] o.j.s.tasks.MigrateFromV5toV6Task - Found 0 scheduled jobs to migrate.
+2025-04-19 03:20:18.011 INFO  [backgroundjob-worker-pool-4-thread-1] o.j.s.tasks.MigrateFromV5toV6Task - Finished migration of scheduled jobs from v5 to v6
+2025-04-19 03:20:18.845 INFO  [main] c.i.jobrunr.JobrunrApplicationTests - Started JobrunrApplicationTests in 4.71 seconds (process running for 5.181)
+2025-04-19 03:20:19.251 INFO  [extShutdownHook] o.jobrunr.server.BackgroundJobServer - BackgroundJobServer and BackgroundJobPerformers - stopping (waiting for all jobs to complete - max 10 seconds)
+2025-04-19 03:20:19.273 INFO  [extShutdownHook] o.jobrunr.server.BackgroundJobServer - BackgroundJobServer and BackgroundJobPerformers stopped
+2025-04-19 03:20:19.276 INFO  [extShutdownHook] o.j.d.JobRunrDashboardWebServer - JobRunr dashboard stopped
+2025-04-19 03:20:19.276 INFO  [SpringApplicationShutdownHook] o.j.d.JobRunrDashboardWebServer - JobRunr dashboard stopped
+2025-04-19 03:20:19.277 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - jobrunr - Shutdown initiated...
+2025-04-19 03:20:19.279 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - jobrunr - Shutdown completed.
+2025-04-19 03:20:35.941 INFO  [main] c.irsan.jobrunr.JobrunrApplication - Starting JobrunrApplication using Java 17.0.12 with PID 66320 (/Users/MacBook/my-project/java/jobrunr/target/classes started by MacBook in /Users/MacBook/my-project/java/jobrunr)
+2025-04-19 03:20:35.943 INFO  [main] c.irsan.jobrunr.JobrunrApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-19 03:20:36.404 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+2025-04-19 03:20:36.405 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-19 03:20:36.405 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-19 03:20:36.429 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-19 03:20:36.512 INFO  [main] com.zaxxer.hikari.HikariDataSource - jobrunr - Starting...
+2025-04-19 03:20:36.801 INFO  [main] com.zaxxer.hikari.pool.HikariPool - jobrunr - Added connection org.postgresql.jdbc.PgConnection@42679fc2
+2025-04-19 03:20:36.802 INFO  [main] com.zaxxer.hikari.HikariDataSource - jobrunr - Start completed.
+2025-04-19 03:20:37.763 INFO  [main] o.j.s.t.ScheduledThreadPoolJobRunrExecutor - ThreadManager of type 'ScheduledThreadPool' started
+2025-04-19 03:20:37.773 INFO  [main] o.j.d.JobRunrDashboardWebServer - JobRunr Dashboard using PostgresStorageProvider started at http://localhost:8001/dashboard
+2025-04-19 03:20:37.839 INFO  [backgroundjob-zookeeper-pool-2-thread-1] o.jobrunr.server.BackgroundJobServer - JobRunr BackgroundJobServer (af162a0c-ac34-4c52-8eeb-1d0fd4db67fd) using PostgresStorageProvider and 1 BackgroundJobPerformers started successfully
+2025-04-19 03:20:37.840 INFO  [backgroundjob-zookeeper-pool-2-thread-1] org.jobrunr.server.ServerZooKeeper - Server af162a0c-ac34-4c52-8eeb-1d0fd4db67fd is master (this BackgroundJobServer)
+2025-04-19 03:20:38.748 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+2025-04-19 03:20:38.760 INFO  [main] c.irsan.jobrunr.JobrunrApplication - Started JobrunrApplication in 3.044 seconds (process running for 3.293)
+2025-04-19 03:20:39.012 INFO  [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-19 03:29:52.326 INFO  [extShutdownHook] o.jobrunr.server.BackgroundJobServer - BackgroundJobServer and BackgroundJobPerformers - stopping (waiting for all jobs to complete - max 10 seconds)
+2025-04-19 03:29:52.376 INFO  [extShutdownHook] o.jobrunr.server.BackgroundJobServer - BackgroundJobServer and BackgroundJobPerformers stopped
+2025-04-19 03:29:52.377 INFO  [extShutdownHook] o.j.d.JobRunrDashboardWebServer - JobRunr dashboard stopped
+2025-04-19 03:29:52.377 INFO  [SpringApplicationShutdownHook] o.j.d.JobRunrDashboardWebServer - JobRunr dashboard stopped
+2025-04-19 03:29:52.377 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - jobrunr - Shutdown initiated...
+2025-04-19 03:29:52.378 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - jobrunr - Shutdown completed.

@@ -15,7 +15,7 @@ public class SampleJobService {
 
     private static final Logger log = LoggerFactory.getLogger(SampleJobService.class);
 
-    @Job(retries = 0)
+    @Job(retries = 3)
     public void executeJob() {
         throw new RuntimeException("Simulasi error tanpa retry");
     }
